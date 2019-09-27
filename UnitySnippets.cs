@@ -100,7 +100,7 @@
         int hour = ThisDate.Hour;
         int minute = ThisDate.Minute;
         int second = ThisDate.Second;
-        string currentDate = null;
+        string currentDate = "";
         string tempMinute = "";
 
         string ampm = ThisDate.ToString("tt", CultureInfo.InvariantCulture);
@@ -113,7 +113,7 @@
         }
         else
         {
-            currentDate = "" + (month).ToString() + "" + dayDate.ToString() + "" + year.ToString() + "" + hour.ToString() + "" + tempMinute + minute.ToString();
+            currentDate = (month).ToString() + "" + dayDate.ToString() + "" + year.ToString() + "" + hour.ToString() + "" + tempMinute + minute.ToString();
         }
 
         return currentDate;
