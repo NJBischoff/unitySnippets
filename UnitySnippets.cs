@@ -1,5 +1,6 @@
+// Copyright (c) NJ Bischoff. 
 
-  
+
     //Generates the Unity path, takes into consideration if the user is in a dev environment
     //These values below should math your Unity game setup defaults
     private string coName = "xyz_corp";
@@ -18,18 +19,21 @@
             path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             path = path + "\\" + coName + "\\" + gameName + "\\" + filename;
         }
+      
         if (UnityEngine.Application.platform == RuntimePlatform.OSXEditor || UnityEngine.Application.platform == RuntimePlatform.OSXPlayer)
         {
             errorOccured = false;
             path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             path = path + "/Library/Application Support/" + coName + "/" + gameName + "/" + filename;
         }
+      
         if (UnityEngine.Application.platform == RuntimePlatform.LinuxPlayer || UnityEngine.Application.platform == RuntimePlatform.LinuxPlayer)
         {
             errorOccured = false;
             path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             path = path + "/.config/unity3d/" + coName + "/" + gameName + "/" + filename;
         }
+      
         if (errorOccured == true)
         {
             Debug.LogError("<color=red>[ERROR]</color>" + " " + "Could not Find Location of: " + filename + " @ " + UnityEngine.Application.platform + " - " + coName + " - " + gameName);
@@ -54,6 +58,7 @@
         {
             hasBeenCreated = false;
         }
+      
         if (Directory.Exists(loadPath("")))
         {
             hasBeenCreated = true;
@@ -121,6 +126,8 @@
         return 1 * Mathf.Round((input / 1));
     }
 
+
+
     //Returns the Bounds of on object as a Vector3
     Vector3 GetCenterBounds(GameObject thisObject)
     {
@@ -128,12 +135,16 @@
         return thisBounds.center;
     }
 
+
+
     //Returns the MinBounds by GameObject
     Vector3 GetMinBounds(GameObject thisObject)
     {
         Bounds thisBounds = thisObject.GetComponent<Collider>().bounds;
         return thisBounds.min;
     }
+
+
 
     //Returns the center of an array of Vectors
     Vector3 CenterOfVectors(Vector3[] vectors)
@@ -149,8 +160,11 @@
         {
             sum += vec;
         }
+      
         return sum / vectors.Length;
     }
+
+
 
     //Returns a float when a string is inputted and fails gracefully
     float FloatParse(string value)
@@ -169,6 +183,8 @@
 
         return result;
     }
+
+
 
     //Returns a int when a string is inputted and fails gracefully
     int IntParse(string value)
