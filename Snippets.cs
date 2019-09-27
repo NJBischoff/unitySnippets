@@ -1,11 +1,12 @@
- 
-    //GENERATES THE CORRECT PATH IN EACH ENVIRONMENT
+
+  
+    //Generates the Unity path, takes into consideration if the user is in a dev environment
     //These values below should math your Unity game setup defaults
     private string coName = "xyz_corp";
     private string gameName = "xyz";
     private string dataFolder = "xyz_data";
 
-    public string LoadPath(string filename)
+    String LoadPath(string filename)
     {
         string path = "";
 
@@ -38,8 +39,8 @@
     }
 
 
-    //CHECKS TO SEE IF THE DIRECTORY HAS BEEN CREATED IN THE USER FOLDER
-    public bool checkIfDirectoryCreated()
+    //Checks to see if the Unity Folder has been created, works in conjunction with LoadPath()
+    Bool CheckIfDirectoryCreated()
     {
         bool hasBeenCreated = false;
 
@@ -62,7 +63,7 @@
     }
 
     //Returns the Date, with an optional reformatting
-    public string date(bool prettyFormat) //Monday, May 25, 2017, 2:45 PM
+    String Date(bool prettyFormat) //Monday, May 25, 2017, 2:45 PM
     {
         DateTime ThisDate = DateTime.Now;
 
@@ -114,28 +115,28 @@
     }
 
 
-    //Rounds a Number
-    public float Round(float input)
+    //Rounds a Number, returns a float
+    float Round(float input)
     {
         return 1 * Mathf.Round((input / 1));
     }
 
     //Returns the Bounds of on object as a Vector3
-    public Vector3 getCenterBounds(GameObject thisObject)
+    Vector3 GetCenterBounds(GameObject thisObject)
     {
         Bounds thisBounds = thisObject.GetComponent<Collider>().bounds;
         return thisBounds.center;
     }
 
     //Returns the MinBounds by GameObject
-    public Vector3 getMinBounds(GameObject thisObject)
+    Vector3 GetMinBounds(GameObject thisObject)
     {
         Bounds thisBounds = thisObject.GetComponent<Collider>().bounds;
         return thisBounds.min;
     }
 
     //Returns the center of an array of Vectors
-    public Vector3 CenterOfVectors(Vector3[] vectors)
+    Vector3 CenterOfVectors(Vector3[] vectors)
     {
         Vector3 sum = Vector3.zero;
 
