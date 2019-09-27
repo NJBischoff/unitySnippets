@@ -1,5 +1,5 @@
-# unitySnippets
-Unity Snippets of Code that I use all the time.
+# UNITY SNIPPETS
+Odd code that I use all the time.
 
 //depending on the snippet, they may require:
 
