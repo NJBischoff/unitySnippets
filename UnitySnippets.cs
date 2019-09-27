@@ -68,6 +68,9 @@
     }
 
     //Returns the Date, with an optional reformatting
+    //Add To Header:
+    //using System.Globalization;
+
     String Date(bool prettyFormat) //Monday, May 25, 2017, 2:45 PM
     {
         DateTime ThisDate = DateTime.Now;
